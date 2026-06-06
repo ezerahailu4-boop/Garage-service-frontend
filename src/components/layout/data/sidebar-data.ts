@@ -1,165 +1,124 @@
 import {
-  IconBarrierBlock,
-  IconBrowserCheck,
-  IconBug,
-  IconChecklist,
-  IconError404,
-  IconHelp,
   IconLayoutDashboard,
-  IconLock,
-  IconLockAccess,
-  IconMessages,
-  IconNotification,
-  IconPackages,
-  IconPalette,
-  IconServerOff,
   IconSettings,
   IconTool,
   IconUserCog,
-  IconUserOff,
+  IconPalette,
+  IconNotification,
+  IconChecklist,
+  IconHelp,
   IconUsers,
+  IconCar,
+  IconClipboardCheck,
+  IconFileInvoice,
+  IconTools,
+  IconUsersGroup,
+  IconBox,
+  IconChartBar,
+  IconCreditCard,
+  IconTruck,
+  IconCarAdd,
+  IconClipboardList,
+  IconFileCheck,
+  IconClock,
+  IconWrench,
+  IconChecklist as IconTaskChecklist,
+  IconTrendingUp,
 } from '@tabler/icons-react'
-import { AudioWaveform, Command, GalleryVerticalEnd } from 'lucide-react'
-import { ClerkLogo } from '@/assets/clerk-logo'
+import { Command } from 'lucide-react'
 import { type SidebarData } from '../types'
 
 export const sidebarData: SidebarData = {
   user: {
-    name: 'satnaing',
-    email: 'satnaingdev@gmail.com',
+    name: 'Garage Admin',
+    email: 'admin@garage.com',
     avatar: '/avatars/shadcn.jpg',
   },
   teams: [
     {
-      name: 'Shadcn Admin',
+      name: 'Garage Pro',
       logo: Command,
-      plan: 'Vite + ShadcnUI',
-    },
-    {
-      name: 'Acme Inc',
-      logo: GalleryVerticalEnd,
       plan: 'Enterprise',
-    },
-    {
-      name: 'Acme Corp.',
-      logo: AudioWaveform,
-      plan: 'Startup',
     },
   ],
   navGroups: [
     {
-      title: 'General',
+      title: 'Main',
       items: [
         {
           title: 'Dashboard',
-          url: '/',
+          url: '/' as const,
           icon: IconLayoutDashboard,
         },
+      ],
+    },
+    {
+      title: 'Operations',
+      items: [
         {
-          title: 'Tasks',
-          url: '/tasks',
-          icon: IconChecklist,
-        },
-        {
-          title: 'Apps',
-          url: '/apps',
-          icon: IconPackages,
-        },
-        {
-          title: 'Chats',
-          url: '/chats',
-          badge: '3',
-          icon: IconMessages,
-        },
-        {
-          title: 'Users',
-          url: '/users',
+          title: 'Customers',
+          url: '/customers' as const,
           icon: IconUsers,
         },
         {
-          title: 'Secured by Clerk',
-          icon: ClerkLogo,
-          items: [
-            {
-              title: 'Sign In',
-              url: '/clerk/sign-in',
-            },
-            {
-              title: 'Sign Up',
-              url: '/clerk/sign-up',
-            },
-            {
-              title: 'User Management',
-              url: '/clerk/user-management',
-            },
-          ],
+          title: 'Vehicles',
+          url: '/vehicles' as const,
+          icon: IconCar,
+        },
+        {
+          title: 'Inspections',
+          url: '/inspections' as const,
+          icon: IconClipboardCheck,
+        },
+        {
+          title: 'Quotations',
+          url: '/quotations' as const,
+          icon: IconFileInvoice,
+        },
+        {
+          title: 'Work Orders',
+          url: '/work-orders' as const,
+          icon: IconTools,
         },
       ],
     },
     {
-      title: 'Pages',
+      title: 'Resources',
       items: [
         {
-          title: 'Auth',
-          icon: IconLockAccess,
-          items: [
-            {
-              title: 'Sign In',
-              url: '/sign-in',
-            },
-            {
-              title: 'Sign In (2 Col)',
-              url: '/sign-in-2',
-            },
-            {
-              title: 'Sign Up',
-              url: '/sign-up',
-            },
-            {
-              title: 'Forgot Password',
-              url: '/forgot-password',
-            },
-            {
-              title: 'OTP',
-              url: '/otp',
-            },
-          ],
+          title: 'Technicians',
+          url: '/technicians' as const,
+          icon: IconUsersGroup,
         },
         {
-          title: 'Errors',
-          icon: IconBug,
-          items: [
-            {
-              title: 'Unauthorized',
-              url: '/401',
-              icon: IconLock,
-            },
-            {
-              title: 'Forbidden',
-              url: '/403',
-              icon: IconUserOff,
-            },
-            {
-              title: 'Not Found',
-              url: '/404',
-              icon: IconError404,
-            },
-            {
-              title: 'Internal Server Error',
-              url: '/500',
-              icon: IconServerOff,
-            },
-            {
-              title: 'Maintenance Error',
-              url: '/503',
-              icon: IconBarrierBlock,
-            },
-          ],
+          title: 'Inventory',
+          url: '/inventory' as const,
+          icon: IconBox,
+        },
+        {
+          title: 'Suppliers',
+          url: '/suppliers' as const,
+          icon: IconTruck,
         },
       ],
     },
     {
-      title: 'Other',
+      title: 'Finance',
+      items: [
+        {
+          title: 'Invoices',
+          url: '/invoices' as const,
+          icon: IconCreditCard,
+        },
+        {
+          title: 'Reports',
+          url: '/reports' as const,
+          icon: IconChartBar,
+        },
+      ],
+    },
+    {
+      title: 'Settings',
       items: [
         {
           title: 'Settings',
@@ -167,34 +126,34 @@ export const sidebarData: SidebarData = {
           items: [
             {
               title: 'Profile',
-              url: '/settings',
+              url: '/settings' as const,
               icon: IconUserCog,
             },
             {
               title: 'Account',
-              url: '/settings/account',
+              url: '/settings/account' as const,
               icon: IconTool,
             },
             {
               title: 'Appearance',
-              url: '/settings/appearance',
+              url: '/settings/appearance' as const,
               icon: IconPalette,
             },
             {
               title: 'Notifications',
-              url: '/settings/notifications',
+              url: '/settings/notifications' as const,
               icon: IconNotification,
             },
             {
               title: 'Display',
-              url: '/settings/display',
-              icon: IconBrowserCheck,
+              url: '/settings/display' as const,
+              icon: IconChecklist,
             },
           ],
         },
         {
           title: 'Help Center',
-          url: '/help-center',
+          url: '/help-center' as const,
           icon: IconHelp,
         },
       ],
